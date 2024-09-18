@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thed</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        img {
+            max-width: 75%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #playButton {
+            position:absolute;/* Permite posicionar o botão */
+            top: 70px; /* Distância do topo */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translateX(-50%); /* Ajusta para centralizar o botão */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        #playButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dedico a você</h1>
+    <img src="2anos.png" alt="Casal">
+    
+    <audio id="audio" loop>
+        <source src="explodir (visualizer).mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <button id="playButton" onclick="playAudio()">Reproduzir Música</button>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audio");
+            audio.play().catch(function(error) {
+                console.log("Autoplay não permitido: ", error);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            playAudio();
+        });
+    </script>
+
+</body>
+</html>
+
+
